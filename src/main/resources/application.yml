@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    # transfer query check
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    # launch data.sql after create table
+    defer-datasource-initialization: true
