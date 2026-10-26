@@ -1,8 +1,10 @@
 package io.github.pyrite9.springdeveloper;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
@@ -13,6 +15,7 @@ public class Member {
     private long id;
 
     @Column(nullable = false)
+    @Setter(AccessLevel.PUBLIC) // for dirty-checking update test
     private String name;
     private String email;
 

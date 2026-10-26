@@ -1,0 +1,4 @@
+spring:
+  sql:
+    init:
+      mode: never # prevent src/main/resources/data.sql from running in tests
