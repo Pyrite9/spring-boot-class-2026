@@ -6,6 +6,8 @@ import io.github.pyrite9.springdeveloper.repository.BlogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class BlogService {
@@ -13,5 +15,14 @@ public class BlogService {
 
     public Article save(ArticleCreationRequest articleCreationRequest) {
         return blogRepository.save(articleCreationRequest.toEntity());
+    }
+
+    public Article getById(Long id) {
+        return blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+    }
+
+    public List<Article> findAll() {
+        return blogRepository.findAll();
     }
 }
